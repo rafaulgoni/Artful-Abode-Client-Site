@@ -1,5 +1,5 @@
 
-
+import Swal from 'sweetalert2'
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
@@ -42,7 +42,11 @@ const Register = () => {
                 updateUserProfile(name, photo)
                     .then(() => {
                         e.target.reset()
-
+                        Swal.fire({
+                            icon: "success",
+                            title: "Congratulations Boss",
+                            text: "Your create an account success!",
+                          });
                         navigate('/')
                     })
             })
