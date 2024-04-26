@@ -4,6 +4,9 @@ import LogIn from "../Auth/LogIn";
 import Register from "../Auth/Register";
 import Error from "../Pages/Error";
 import Home from "../Pages/Home";
+import AllCraftItems from './../Pages/AllCraftItems';
+import AddCraftItem from './../Pages/AddCraftItem';
+import MyCraftList from './../Pages/MyCraftList';
 
 
 
@@ -17,6 +20,18 @@ export const router = createBrowserRouter([
         {
             path:'/',
             element: <Home></Home>,
+        },
+        {
+          path:'/all',
+          element: <AllCraftItems></AllCraftItems>
+        },
+        {
+          path: '/add',
+          element: <AddCraftItem></AddCraftItem>,
+        },
+        {
+          path: '/my',
+          element: <MyCraftList></MyCraftList>,
         },
         {
             path:'/register',
