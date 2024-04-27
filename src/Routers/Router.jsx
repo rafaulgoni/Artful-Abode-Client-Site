@@ -7,6 +7,7 @@ import Home from "../Pages/Home";
 import AllCraftItems from './../Pages/AllCraftItems';
 import AddCraftItem from './../Pages/AddCraftItem';
 import MyCraftList from './../Pages/MyCraftList';
+import Details from "../Components/Details";
 
 
 
@@ -20,6 +21,12 @@ export const router = createBrowserRouter([
         {
             path:'/',
             element: <Home></Home>,
+            loader: ()=> fetch('http://localhost:5000/art')
+        },
+        {
+          path:'/details/:id',
+          element: <Details></Details>,
+          loader: ({ params }) => fetch(`http://localhost:5000/art/${params.id}`)
         },
         {
           path:'/all',

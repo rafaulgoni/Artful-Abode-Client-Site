@@ -1,10 +1,47 @@
-
+import Swal from 'sweetalert2'
 
 const AddCraftItem = () => {
+    const handleAddCoffee = event => {
+        event.preventDefault();
+        const form = event.target;
+
+        const name = form.name.value;
+        const subcategory = form.subcategory.value;
+        const description = form.description.value;
+        const price = form.price.value;
+        const rating = form.rating.value;
+        const customization = form.customization.value;
+        const time = form.time.value;
+        const status = form.status.value;
+        const image = form.image.value;
+        const newArt = { name, subcategory, description, price, rating, customization, time, status, image }
+
+        console.log(newArt);
+
+        fetch('http://localhost:5000/art',{
+            method: "POST",
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(newArt)
+        })
+        .then(res=>res.json())
+        .then(data =>{
+            console.log(data)
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'User add successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
+        })
+    }
     return (
         <div className="bg-base-200 p-6 md:p-24 container mx-auto">
             <h2 className="text-3xl font-extrabold">Add Craft Item</h2>
-            <form>
+            <form onSubmit={handleAddCoffee}>
                 <div className="md:flex mb-8">
                     <div className="form-control md:w-1/2">
                         <label className="label">
