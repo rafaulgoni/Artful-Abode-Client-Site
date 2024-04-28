@@ -8,6 +8,8 @@ import AllCraftItems from './../Pages/AllCraftItems';
 import AddCraftItem from './../Pages/AddCraftItem';
 import MyCraftList from './../Pages/MyCraftList';
 import Details from "../Components/Details";
+import ShowDetails from "../Pages/AllShow/ShowDetails";
+
 
 
 
@@ -30,7 +32,13 @@ export const router = createBrowserRouter([
         },
         {
           path:'/all',
-          element: <AllCraftItems></AllCraftItems>
+          element: <AllCraftItems></AllCraftItems>,
+          loader: ()=> fetch('http://localhost:5000/user')
+        },
+        {
+          path:'/allShow/:id',
+          element: <ShowDetails></ShowDetails>,
+          loader: ({ params }) => fetch(`http://localhost:5000/user/${params.id}`)
         },
         {
           path: '/add',
