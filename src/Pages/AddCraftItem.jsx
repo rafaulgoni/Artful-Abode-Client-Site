@@ -18,8 +18,9 @@ const AddCraftItem = () => {
         const status = form.status.value;
         const image = form.image.value;
         const email = user.email;
+        const displayName =user.displayName
 
-        const newAll = { name, subcategory, description, price, rating, customization, time, status, image, email}
+        const newAll = { name, subcategory, description, price, rating, customization, time, status, image, email, displayName}
 
         console.log(newAll);
 
@@ -38,7 +39,7 @@ const AddCraftItem = () => {
                     title: 'Success!',
                     text: 'Add craft successfully',
                     icon: 'success',
-                    confirmButtonText: 'Cool'
+                    confirmButtonText: 'Ok Boss'
                   })
             }
         })

@@ -19,7 +19,7 @@ const ShowDetails = () => {
             <title>Luxe Havens | Details</title>
         </Helmet> */}
             <div className="card lg:card-side bg-base-100 shadow-xl">
-                <figure className="max-w-[800px] max-h-[400px]"><img src={detail.image} alt="Album" /></figure>
+                <figure className="max-w-[800px] max-h-[400px] cursor-move"><img src={detail.image} alt="Album" /></figure>
                 <div className="card-body">
                     <h2 className="card-title font-extrabold text-3xl">{detail.name}</h2>
                     <p className='font-bold text-xl'>{detail.subcategory}</p>
