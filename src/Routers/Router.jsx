@@ -38,7 +38,6 @@ export const router = createBrowserRouter([
         {
           path:'/allShow/:id',
           element: <ShowDetails></ShowDetails>,
-          loader: ({ params }) => fetch(`http://localhost:5000/user/${params.id}`)
         },
         {
           path: '/add',
