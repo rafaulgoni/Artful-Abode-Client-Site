@@ -8,7 +8,7 @@ const Details = () => {
     const [detail, setDetail] = useState({})
     const { id } = useParams();
     useEffect(() => {
-        fetch(`http://localhost:5000/art/${id}`)
+        fetch(`https://b9a10-server-side-rafaulgoni.vercel.app/art/${id}`)
             .then(res => res.json())
             .then(data => {
                 setDetail(data)

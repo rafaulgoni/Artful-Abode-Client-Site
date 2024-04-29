@@ -25,17 +25,17 @@ export const router = createBrowserRouter([
         {
             path:'/',
             element: <Home></Home>,
-            loader: ()=> fetch('http://localhost:5000/art')
+            loader: ()=> fetch('https://b9a10-server-side-rafaulgoni.vercel.app/art')
         },
         {
           path:'/details/:id',
           element: <PrivateRoute><Details></Details></PrivateRoute>,
-          loader: ({ params }) => fetch(`http://localhost:5000/art/${params.id}`)
+          loader: ({ params }) => fetch(`https://b9a10-server-side-rafaulgoni.vercel.app/art/${params.id}`)
         },
         {
           path:'/all',
           element: <AllCraftItems></AllCraftItems>,
-          loader: ()=> fetch('http://localhost:5000/user')
+          loader: ()=> fetch('https://b9a10-server-side-rafaulgoni.vercel.app/user')
         },
         {
           path:'/allShow/:id',
@@ -52,7 +52,7 @@ export const router = createBrowserRouter([
         {
           path:'/update/:id',
           element: <Update></Update>,
-          loader: ({ params }) => fetch(`http://localhost:5000/user/${params.id}`)
+          loader: ({ params }) => fetch(`https://b9a10-server-side-rafaulgoni.vercel.app/user/${params.id}`)
         },
         {
             path:'/register',

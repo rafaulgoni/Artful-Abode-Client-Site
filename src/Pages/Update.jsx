@@ -20,7 +20,7 @@ const Update = () => {
         const image = form.image.value;
         const newAll = { name, subcategory, description, price, rating, customization, time, status, image}
 
-        fetch(`http://localhost:5000/user/${_id}`, {
+        fetch(`https://b9a10-server-side-rafaulgoni.vercel.app/user/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

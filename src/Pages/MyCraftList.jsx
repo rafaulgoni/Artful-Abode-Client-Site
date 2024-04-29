@@ -9,7 +9,7 @@ import { FaStar } from "react-icons/fa";
 const MyCraftList = () => {
   const { user } = useContext(AuthContext)
   const [item, setItem] = useState([])
-  fetch(`http://localhost:5000/data/${user.email}`)
+  fetch(`https://b9a10-server-side-rafaulgoni.vercel.app/data/${user.email}`)
     .then(res => res.json())
     .then(data => {
       setItem(data)
@@ -29,7 +29,7 @@ const MyCraftList = () => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        fetch(`http://localhost:5000/user/${_id}`, {
+        fetch(`https://b9a10-server-side-rafaulgoni.vercel.app/user/${_id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())

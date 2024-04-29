@@ -25,7 +25,7 @@ const AddCraftItem = () => {
 
         console.log(newAll);
 
-        fetch('http://localhost:5000/user',{
+        fetch('https://b9a10-server-side-rafaulgoni.vercel.app/user',{
             method: "POST",
             headers:{
                 'content-type':'application/json'

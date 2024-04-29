@@ -7,7 +7,7 @@ const ShowDetails = () => {
     const [detail, setDetail] = useState({})
     const { id } = useParams();
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${id}`)
+        fetch(`https://b9a10-server-side-rafaulgoni.vercel.app/user/${id}`)
             .then(res => res.json())
             .then(data => {
                 setDetail(data)
