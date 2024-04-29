@@ -4,7 +4,8 @@ import { AuthContext } from './../Providers/AuthProvider';
 
 const AddCraftItem = () => {
     const {user} =useContext(AuthContext)
-    const handleAddCoffee = event => {
+
+    const handleAddCraft = event => {
         event.preventDefault();
         const form = event.target;
 
@@ -47,7 +48,7 @@ const AddCraftItem = () => {
     return (
         <div className="bg-base-200 p-6 md:p-24 container mx-auto">
             <h2 className="text-3xl font-extrabold">Add Craft Item</h2>
-            <form onSubmit={handleAddCoffee}>
+            <form onSubmit={handleAddCraft}>
                 <div className="md:flex mb-8">
                     <div className="form-control md:w-1/2">
                         <label className="label">

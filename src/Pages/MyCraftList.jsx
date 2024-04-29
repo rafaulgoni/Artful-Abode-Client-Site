@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { AuthContext } from './../Providers/AuthProvider';
 import { useState } from "react";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
+import { FaStar } from "react-icons/fa";
 
 
 const MyCraftList = () => {
@@ -13,7 +15,7 @@ const MyCraftList = () => {
       setItem(data)
     })
 
-    
+
   const handleDelete = _id => {
     console.log(_id);
     Swal.fire({
@@ -58,9 +60,13 @@ const MyCraftList = () => {
               <div className="badge bg-[#1DD100]">NEW</div>
             </h2>
             <p>{p.subcategory}</p>
+            <div className='flex justify-around'>
+              <p className='text-[#1DD100]'>Price: {p.price}</p>
+              <p className='flex items-center text-[#1DD100]'><FaStar></FaStar> {p.rating}</p>
+            </div>
             <div className="card-actions justify-end">
-              <div onClick={()=>handleDelete(p._id)} className="btn btn-sm outline outline-red-600">Delate</div>
-              <div className="btn btn-sm outline outline-[#1DD100]">Update</div>
+              <div onClick={() => handleDelete(p._id)} className="btn btn-sm outline outline-red-600">Delate</div>
+              <Link to={`/update/${p._id}`} className="btn btn-sm outline outline-[#1DD100]">Update</Link>
             </div>
           </div>
         </div></div>)
