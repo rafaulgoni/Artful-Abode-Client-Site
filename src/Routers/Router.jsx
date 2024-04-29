@@ -10,6 +10,7 @@ import MyCraftList from './../Pages/MyCraftList';
 import Details from "../Components/Details";
 import ShowDetails from "../Pages/AllShow/ShowDetails";
 import Update from "../Pages/Update";
+import PrivateRoute from './PrivateRoute';
 
 
 
@@ -28,7 +29,7 @@ export const router = createBrowserRouter([
         },
         {
           path:'/details/:id',
-          element: <Details></Details>,
+          element: <PrivateRoute><Details></Details></PrivateRoute>,
           loader: ({ params }) => fetch(`http://localhost:5000/art/${params.id}`)
         },
         {
@@ -38,15 +39,15 @@ export const router = createBrowserRouter([
         },
         {
           path:'/allShow/:id',
-          element: <ShowDetails></ShowDetails>,
+          element: <PrivateRoute><ShowDetails></ShowDetails></PrivateRoute>,
         },
         {
           path: '/add',
-          element: <AddCraftItem></AddCraftItem>,
+          element: <PrivateRoute><AddCraftItem></AddCraftItem></PrivateRoute>,
         },
         {
-          path: '/my',
-          element: <MyCraftList></MyCraftList>,
+          path: '/myCraft',
+          element: <PrivateRoute><MyCraftList></MyCraftList></PrivateRoute> ,
         },
         {
           path:'/update/:id',

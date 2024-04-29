@@ -16,10 +16,14 @@ const Navbar = () => {
     const links = <>
         <li><NavLink to='/' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#1DD100]' : 'font-family'}>Home</NavLink></li>
         <li><NavLink to='/all' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#1DD100]' : 'font-family'}>All Craft Items</NavLink></li>
-
-        <li><NavLink to='/add' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#1DD100]' : 'font-family'}>Add Craft Item</NavLink></li>
-        <li><NavLink to='/my' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#1DD100]' : 'font-family'}>My Craft List</NavLink></li>
+        {
+            user && <>
+                <li><NavLink to='/add' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#1DD100]' : 'font-family'}>Add Craft Item</NavLink></li>
+                <li><NavLink to='/myCraft' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#1DD100]' : 'font-family'}>My Craft List</NavLink></li>
+            </>
+        }
     </>
+
 
 
     const handleToggle = e => {
@@ -69,7 +73,7 @@ const Navbar = () => {
                     </div>
                     <ul tabIndex={0} className="mt-3 z-[10] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                         {
-                            user ?<button onClick={handleSignOut} className="btn btn-sm font-bold bg-[#1DD100]">Log Out</button>: ""
+                            user ? <button onClick={handleSignOut} className="btn btn-sm font-bold bg-[#1DD100]">Log Out</button> : ""
                         }
                     </ul>
                 </div>

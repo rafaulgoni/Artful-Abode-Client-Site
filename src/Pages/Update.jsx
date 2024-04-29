@@ -1,8 +1,9 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Update = () => {
     const card = useLoaderData()
+    const navigate = useNavigate()
     const { name, subcategory, description, price, rating, customization, time, status, image, _id } = card
     const handleUpdateCraft = e =>{
         e.preventDefault();
@@ -36,6 +37,7 @@ const Update = () => {
                         icon: 'success',
                         confirmButtonText: 'ok'
                     })
+                    navigate('/myCraft')
                 }
             })
     }
