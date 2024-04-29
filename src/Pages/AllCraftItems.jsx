@@ -1,7 +1,8 @@
 import { Link, useLoaderData } from "react-router-dom";
-// import AllCraftShow from "./AllShow/AllCraftShow";
 import { FaStar } from "react-icons/fa";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const AllCraftItems = () => {
     const showUserCart = useLoaderData();
@@ -31,35 +32,35 @@ const AllCraftItems = () => {
                                 showUserCart.map(allCard => <tr key={allCard._id}>
                                     <th>
                                         <label>
-                                            <input type="checkbox" className="checkbox" />
+                                            <input data-aos="fade-left" data-aos-delay="500" type="checkbox" className="checkbox" />
                                         </label>
                                     </th>
                                     <td>
                                         <div className="flex items-center gap-3">
-                                            <div className="avatar">
+                                            <div data-aos="fade-left" data-aos-delay="1000" className="avatar">
                                                 <div className="mask mask-squircle w-12 h-12">
                                                     <img src={allCard.image} alt="Avatar Tailwind CSS Component" />
                                                 </div>
                                             </div>
-                                            <div>
+                                            <div data-aos="fade-left" data-aos-delay="1500">
                                                 <div className="font-bold">{allCard.name}</div>
                                                 <div className="text-sm opacity-50">{allCard.subcategory}</div>
                                             </div>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td data-aos="fade-left" data-aos-delay="2000">
                                         {allCard.displayName || "Mr. Anim"}
                                         <br />
                                         <span className="badge badge-ghost badge-sm">{allCard.email || "mr.anim77@gmail.com"}</span>
                                     </td>
-                                    <td>
+                                    <td data-aos="fade-left" data-aos-delay="2400">
                                         <p className='text-[#1DD100]'>{allCard.price}</p>
                                     </td>
-                                    <td>
+                                    <td data-aos="fade-left" data-aos-delay="2700">
                                         <p className='flex items-center text-[#1DD100]'><FaStar></FaStar> {allCard.rating}</p>
                                     </td>
                                     <th>
-                                        <Link to={`/allShow/${allCard._id}`} className="btn btn-sm bg-[#1DD100]">View Details</Link>
+                                        <Link to={`/allShow/${allCard._id}`} data-aos="zoom-in" data-aos-delay="3000" className="btn btn-sm bg-[#1DD100]">View Details</Link>
                                     </th>
                                 </tr>)
                             }

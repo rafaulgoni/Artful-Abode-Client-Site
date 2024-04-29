@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 // import { Helmet } from "react-helmet-async";
+import 'animate.css';
 
 const LogIn = () => {
     const { signIn, googleLogIn, githubLogIn } = useContext(AuthContext)

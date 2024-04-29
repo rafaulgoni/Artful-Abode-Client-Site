@@ -1,4 +1,4 @@
-
+import 'animate.css';
 import Swal from 'sweetalert2'
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";

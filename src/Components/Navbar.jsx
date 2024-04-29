@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
-
+import 'animate.css';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -52,8 +52,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className=" flex items-center">
-                    <img className="w-14 md:block hidden" src={'https://i.ibb.co/5vM0P0y/OIG1-2-Sr5-E9-T-removebg-preview.png'} alt="" />
-                    <h1 className=" font-bold text-xl lg:text-2xl">Artful Abode</h1>
+                    <img className="w-14 md:block hidden animate__animated animate__heartBeat" src={'https://i.ibb.co/5vM0P0y/OIG1-2-Sr5-E9-T-removebg-preview.png'} alt="" />
+                    <h1 className="animate__animated animate__heartBeat font-bold text-xl lg:text-2xl">Artful Abode</h1>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
