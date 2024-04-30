@@ -2,12 +2,16 @@ import { Link, useLoaderData } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
+import { Helmet } from "react-helmet-async";
 AOS.init();
 
 const AllCraftItems = () => {
     const showUserCart = useLoaderData();
     return (
         <div className="container mx-auto space-y-3">
+            <Helmet>
+                <title>Artful Abode | All Craft</title>
+            </Helmet>
             <h1 className="text-4xl text-center font-bold" style={{
                 "border-radius": "88px 88px 0px 0px"
                 , "border-top": "2px solid var(--primary-700, #1DD100)"
@@ -38,7 +42,7 @@ const AllCraftItems = () => {
                                     <td>
                                         <div className="flex items-center gap-3">
                                             <div data-aos="fade-left" data-aos-delay="1000" className="avatar">
-                                                <div className="mask mask-squircle w-12 h-12">
+                                                <div className="mask mask-squircle w-28 h-28">
                                                     <img src={allCard.image} alt="Avatar Tailwind CSS Component" />
                                                 </div>
                                             </div>

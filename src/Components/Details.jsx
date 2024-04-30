@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { FaStar } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 
@@ -16,9 +17,9 @@ const Details = () => {
     }, [id])
     return (
         <div className="container mx-auto">
-            {/* <Helmet>
-                <title>Luxe Havens | Details</title>
-            </Helmet> */}
+            <Helmet>
+                <title>Artful Abode | Details</title>
+            </Helmet>
             <div className="card lg:card-side bg-base-100 shadow-xl">
                 <figure className="max-w-[800px] max-h-[400px]"><img src={detail.image} alt="Album" /></figure>
                 <div className="card-body">

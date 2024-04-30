@@ -11,6 +11,7 @@ import Details from "../Components/Details";
 import ShowDetails from "../Pages/AllShow/ShowDetails";
 import Update from "../Pages/Update";
 import PrivateRoute from './PrivateRoute';
+import Subcategory from "../Pages/Subcategory";
 
 
 
@@ -31,6 +32,11 @@ export const router = createBrowserRouter([
           path:'/details/:id',
           element: <PrivateRoute><Details></Details></PrivateRoute>,
           loader: ({ params }) => fetch(`https://b9a10-server-side-rafaulgoni.vercel.app/art/${params.id}`)
+        },
+        {
+          path:"/subcategory",
+          element: <PrivateRoute><Subcategory></Subcategory></PrivateRoute>,
+          loader: ()=> fetch('https://b9a10-server-side-rafaulgoni.vercel.app/art')
         },
         {
           path:'/all',

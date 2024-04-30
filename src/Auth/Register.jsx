@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-// import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
     const navigate = useNavigate()
@@ -56,9 +56,9 @@ const Register = () => {
     }
     return (
         <div>
-            {/* <Helmet>
-                <title>| Register</title>
-            </Helmet> */}
+            <Helmet>
+                <title>Artful Abode | Register</title>
+            </Helmet>
             <div className="hero bg-cover bg-base-200 container mx-auto rounded-t-xl">
                 <div className="hero-content flex-col">
                     <div className="text-center">

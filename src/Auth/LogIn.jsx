@@ -2,7 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
-// import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
 import 'animate.css';
 
 const LogIn = () => {
@@ -52,9 +52,9 @@ const LogIn = () => {
     }
     return (
         <div>
-            {/* <Helmet>
-                <title> | LogIn</title>
-            </Helmet> */}
+            <Helmet>
+                <title>Artful Abode | LogIn</title>
+            </Helmet>
             <div className="hero container mx-auto">
                 <div className="hero-content flex-col">
                     <div className="text-center lg:text-left">

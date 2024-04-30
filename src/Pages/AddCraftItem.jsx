@@ -1,9 +1,13 @@
 import { useContext } from 'react';
 import Swal from 'sweetalert2'
 import { AuthContext } from './../Providers/AuthProvider';
+import { Helmet } from 'react-helmet-async';
+import { useNavigate } from 'react-router-dom';
+
 
 const AddCraftItem = () => {
     const {user} =useContext(AuthContext)
+    const navigate = useNavigate()
 
     const handleAddCraft = event => {
         event.preventDefault();
@@ -34,7 +38,6 @@ const AddCraftItem = () => {
         })
         .then(res=>res.json())
         .then(data =>{
-            console.log(data)
             if(data.insertedId){
                 Swal.fire({
                     title: 'Success!',
@@ -42,11 +45,16 @@ const AddCraftItem = () => {
                     icon: 'success',
                     confirmButtonText: 'Ok Boss'
                   })
+                  event.target.reset()
+                  navigate('/myCraft')
             }
         })
     }
     return (
         <div className="bg-base-200 p-6 md:p-24 container mx-auto">
+            <Helmet>
+                <title>Artful Abode | Add Craft</title>
+            </Helmet>
             <h2 className="text-3xl font-extrabold">Add Craft Item</h2>
             <form onSubmit={handleAddCraft}>
                 <div className="md:flex mb-8">

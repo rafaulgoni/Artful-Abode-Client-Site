@@ -5,11 +5,16 @@ import SliderInfo from "../Components/slider/SliderInfo";
 import ArtCard from "../Components/Art/ArtCard";
 import Contact from "../Components/Contact";
 import Agents from "../Components/Agents";
+import Craft from "../Components/Craft";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
     const showArt = useLoaderData();
     return (
         <div>
+            <Helmet>
+                <title>Artful Abode | Home</title>
+            </Helmet>
             <div className="container mx-auto relative">
                 <Slider></Slider>
                 <div className="absolute top-[90px] lg:left-8 z-10">
@@ -38,6 +43,10 @@ const Home = () => {
                 <Contact></Contact>
             </div>
             <div className="mt-10">
+                <h1 className="text-center font-bold text-3xl">Art & Craft Categories</h1>
+                <Craft></Craft>
+            </div>
+            <div>
                 <Agents></Agents>
             </div>
         </div>

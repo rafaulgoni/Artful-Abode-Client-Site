@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -44,6 +45,9 @@ const Update = () => {
     
     return (
         <div>
+            <Helmet>
+                <title>Artful Abode | Update</title>
+            </Helmet>
             <div className="bg-base-200 p-6 md:p-24 container mx-auto">
                 <h2 className="text-3xl font-extrabold">Add Craft Item</h2>
                 <form onSubmit={handleUpdateCraft}>

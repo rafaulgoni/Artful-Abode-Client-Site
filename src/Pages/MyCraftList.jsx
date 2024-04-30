@@ -5,35 +5,35 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 
 
 const MyCraftList = () => {
   const { user } = useContext(AuthContext)
   const [item, setItem] = useState([])
-  const [display, setDisplay] =useState([])
+  const [display, setDisplay] = useState([])
   fetch(`https://b9a10-server-side-rafaulgoni.vercel.app/data/${user.email}`)
     .then(res => res.json())
     .then(data => {
       setItem(data)
       setDisplay(item)
     })
-  const handleCraftFilter = filter=>{
-    if(filter ==="All"){
+  const handleCraftFilter = filter => {
+    if (filter === "All") {
       setDisplay(item)
     }
-    else if (filter === "Yes"){
-      const yes =item.filter(card => card.customization ==="yes")
+    else if (filter === "Yes") {
+      const yes = item.filter(card => card.customization === "yes")
       setDisplay(yes)
     }
-    else if (filter === "No"){
-      const no =item.filter(card => card.customization ==="no")
+    else if (filter === "No") {
+      const no = item.filter(card => card.customization === "no")
       setDisplay(no)
     }
 
   }
 
   const handleDelete = _id => {
-    console.log(_id);
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -67,13 +67,16 @@ const MyCraftList = () => {
   }
   return (
     <div className="container mx-auto">
+      <Helmet>
+        <title>Artful Abode | My Craft</title>
+      </Helmet>
       <div className="flex justify-end">
         <details className="dropdown">
           <summary className="m-1 btn btn-sm bg-[#1DD100]">Customization filter by <FaAngleDown></FaAngleDown></summary>
           <ul className="p-2 shadow menu dropdown-content z-[10] bg-base-100 rounded-box w-48">
-            <li onClick={()=>handleCraftFilter('All')}><a>All</a></li>
-            <li onClick={()=>handleCraftFilter('Yes')}><a>Yes</a></li>
-            <li onClick={()=>handleCraftFilter('No')}><a>No</a></li>
+            <li onClick={() => handleCraftFilter('All')}><a>All</a></li>
+            <li onClick={() => handleCraftFilter('Yes')}><a>Yes</a></li>
+            <li onClick={() => handleCraftFilter('No')}><a>No</a></li>
           </ul>
         </details>
       </div>
