@@ -3,13 +3,11 @@
 
 "Opulent Haven: Where Luxury Meets Lifestyle with panting"
 
-
-
-
-
-
 ## 🔗 Live Site URL:
   https://b9a10-191bd.web.app
+
+## Problem face
+
 
 ## Resources:
 
@@ -25,12 +23,12 @@
 
 ## Installation
 
-Install my-project with npm
+## Installation
+
+Install my-project with clone
 
 ```bash
-  npm install B9A10-client-side-rafaulgoni
-  npm install b9A10-server-side-rafaulgoni
-  cd B9A10-client-side-rafaulgoni
-  cd b9A10-server-side-rafaulgoni
+  git clone 
+  npm Install
+  npm run dev
 ```
-    
