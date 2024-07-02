@@ -7,7 +7,7 @@
   https://b9a10-191bd.web.app
 
 ## Problem face
-
+I faced problem while projecting royal service and implementing a firebase. However, after getting a very nice idea with the help of Google Chat GPT, I have been able to solve my problems.
 
 ## Resources:
 
@@ -20,15 +20,12 @@
 
 - [@rafaulgoni](https://github.com/rafaulgoni)
 
-
-## Installation
-
 ## Installation
 
 Install my-project with clone
 
 ```bash
-  git clone 
+  git clone https://github.com/rafaulgoni/Artful-Abode-Client-Site.git
   npm Install
   npm run dev
 ```
